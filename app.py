@@ -2,6 +2,7 @@ import streamlit as st
 import cv2
 import numpy as np
 from PIL import Image, ImageEnhance
+from io import BytesIO
 
 # ===== 页面配置 =====
 st.set_page_config(page_title="印章图像清理", layout="centered")
@@ -262,10 +263,12 @@ if uploaded_file is not None:
 
         # 将处理后的图片转为字节
         img_bytes = processed.tobytes() if processed.mode == "RGBA" else processed.convert("RGBA").tobytes()
+        buffer = BytesIO()
+        processed.save(buffer, format="PNG")
 
         st.download_button(
             label="📥 下載處理後的圖片 (PNG)",
-            data=img_bytes,
+            data=buffer.getvalue(),
             file_name="seal_cleaned.png",
             mime="image/png",
             use_container_width=True
