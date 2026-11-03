@@ -253,10 +253,10 @@ if uploaded_file is not None:
         col_before, col_after = st.columns(2)
         with col_before:
             st.markdown("**原始圖片**")
-            st.image(original_pil, use_container_width=True)
+            st.image(original_pil, width=350)
         with col_after:
             st.markdown("**處理後圖片**")
-            st.image(processed, use_container_width=True)
+            st.image(processed, width=350)
 
         # ===== 下载 =====
         st.markdown("---")
@@ -271,12 +271,12 @@ if uploaded_file is not None:
             data=buffer.getvalue(),
             file_name="seal_cleaned.png",
             mime="image/png",
-            use_container_width=True
+            width="stretch"
         )
 
         # 显示当前遮罩（调试用，可折叠）
         with st.expander("🔍 查看印章遮罩"):
-            st.image(mask, caption="印章遮罩（白色 = 偵測到的印章區域）", use_container_width=True)
+            st.image(mask, caption="印章遮罩（白色 = 偵測到的印章區域）", width="stretch")
 
 else:
     # 未上传图片时的占位提示
