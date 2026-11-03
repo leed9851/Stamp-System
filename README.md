@@ -12,6 +12,16 @@
 
 ---
 
+# 🚀 線上使用
+
+已部署於 Render，可直接使用：
+
+👉 https://stamp-system.onrender.com
+
+> 免費版閒置約 15 分鐘會休眠，首次開啟需等待 30–50 秒冷啟動。
+
+---
+
 # 功能特色
 
 ## 🎨 印章顏色辨識
@@ -146,7 +156,7 @@ Python 3.10+
 ## 1. Clone 專案
 
 ```bash
-git clone https://github.com/your-repository/seal-cleaner.git
+git clone https://github.com/leed9851/Stamp-System.git
 
 cd seal-cleaner
 ```
@@ -317,7 +327,6 @@ Gaussian Blur
 * OCR文字辨識
 * 批次處理
 * PDF匯出
-* Docker部署
 
 ---
 
